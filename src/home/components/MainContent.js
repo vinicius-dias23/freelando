@@ -16,6 +16,7 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import { styled } from '@mui/material/styles';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded';
+// 0 40 80
 
 const cardData = [
   {
@@ -193,9 +194,9 @@ export default function MainContent() {
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
       <div>
         <Typography variant="h1" gutterBottom>
-          Blog
+          Freelando
         </Typography>
-        <Typography>Stay in the loop with the latest about our products</Typography>
+        <Typography>Ache a pessoa ideal para o serviço que você está precisando</Typography>
       </div>
       <Box
         sx={{
@@ -230,11 +231,11 @@ export default function MainContent() {
             overflow: 'auto',
           }}
         >
-          <Chip onClick={handleClick} size="medium" label="All categories" />
+          <Chip onClick={handleClick} size="medium" label="Todas Categorias" />
           <Chip
             onClick={handleClick}
             size="medium"
-            label="Company"
+            label="Garçom"
             sx={{
               backgroundColor: 'transparent',
               border: 'none',
@@ -243,7 +244,7 @@ export default function MainContent() {
           <Chip
             onClick={handleClick}
             size="medium"
-            label="Product"
+            label="Cozinheiro"
             sx={{
               backgroundColor: 'transparent',
               border: 'none',
@@ -252,7 +253,7 @@ export default function MainContent() {
           <Chip
             onClick={handleClick}
             size="medium"
-            label="Design"
+            label="Limpeza"
             sx={{
               backgroundColor: 'transparent',
               border: 'none',
@@ -261,7 +262,7 @@ export default function MainContent() {
           <Chip
             onClick={handleClick}
             size="medium"
-            label="Engineering"
+            label="Professor Particular"
             sx={{
               backgroundColor: 'transparent',
               border: 'none',
@@ -284,54 +285,22 @@ export default function MainContent() {
         </Box>
       </Box>
       <Grid container spacing={2} columns={12}>
-        <Grid size={{ xs: 12, md: 6 }}>
+        <Grid size={{ xs: 12, md: 3 }}>
           <SyledCard
             variant="outlined"
-            onFocus={() => handleFocus(0)}
+            onFocus={() => handleFocus(2)}
             onBlur={handleBlur}
             tabIndex={0}
-            className={focusedCardIndex === 0 ? 'Mui-focused' : ''}
-          >
-            <CardMedia
-              component="img"
-              alt="green iguana"
-              image={cardData[0].img}
-              sx={{
-                aspectRatio: '16 / 9',
-                borderBottom: '1px solid',
-                borderColor: 'divider',
-              }}
-            />
-            <SyledCardContent>
-              <Typography gutterBottom variant="caption" component="div">
-                {cardData[0].tag}
-              </Typography>
-              <Typography gutterBottom variant="h6" component="div">
-                {cardData[0].title}
-              </Typography>
-              <StyledTypography variant="body2" color="text.secondary" gutterBottom>
-                {cardData[0].description}
-              </StyledTypography>
-            </SyledCardContent>
-            <Author authors={cardData[0].authors} />
-          </SyledCard>
-        </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
-          <SyledCard
-            variant="outlined"
-            onFocus={() => handleFocus(1)}
-            onBlur={handleBlur}
-            tabIndex={0}
-            className={focusedCardIndex === 1 ? 'Mui-focused' : ''}
+            className={focusedCardIndex === 2 ? 'Mui-focused' : ''}
+            sx={{ height: '100%' }}
           >
             <CardMedia
               component="img"
               alt="green iguana"
               image={cardData[1].img}
-              aspect-ratio="16 / 9"
               sx={{
-                borderBottom: '1px solid',
-                borderColor: 'divider',
+                height: { sm: 'auto', md: '50%' },
+                aspectRatio: { sm: '16 / 9', md: '' },
               }}
             />
             <SyledCardContent>
@@ -348,7 +317,7 @@ export default function MainContent() {
             <Author authors={cardData[1].authors} />
           </SyledCard>
         </Grid>
-        <Grid size={{ xs: 12, md: 4 }}>
+        <Grid size={{ xs: 12, md: 3 }}>
           <SyledCard
             variant="outlined"
             onFocus={() => handleFocus(2)}
@@ -380,81 +349,299 @@ export default function MainContent() {
             <Author authors={cardData[2].authors} />
           </SyledCard>
         </Grid>
-        <Grid size={{ xs: 12, md: 4 }}>
-          <Box
-            sx={{ display: 'flex', flexDirection: 'column', gap: 2, height: '100%' }}
+        <Grid size={{ xs: 12, md: 3 }}>
+          <SyledCard
+            variant="outlined"
+            onFocus={() => handleFocus(5)}
+            onBlur={handleBlur}
+            tabIndex={0}
+            className={focusedCardIndex === 5 ? 'Mui-focused' : ''}
+            sx={{ height: '100%' }}
           >
-            <SyledCard
-              variant="outlined"
-              onFocus={() => handleFocus(3)}
-              onBlur={handleBlur}
-              tabIndex={0}
-              className={focusedCardIndex === 3 ? 'Mui-focused' : ''}
-              sx={{ height: '100%' }}
-            >
-              <SyledCardContent
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  height: '100%',
-                }}
-              >
-                <div>
-                  <Typography gutterBottom variant="caption" component="div">
-                    {cardData[3].tag}
-                  </Typography>
-                  <Typography gutterBottom variant="h6" component="div">
-                    {cardData[3].title}
-                  </Typography>
-                  <StyledTypography
-                    variant="body2"
-                    color="text.secondary"
-                    gutterBottom
-                  >
-                    {cardData[3].description}
-                  </StyledTypography>
-                </div>
-              </SyledCardContent>
-              <Author authors={cardData[3].authors} />
-            </SyledCard>
-            <SyledCard
-              variant="outlined"
-              onFocus={() => handleFocus(4)}
-              onBlur={handleBlur}
-              tabIndex={0}
-              className={focusedCardIndex === 4 ? 'Mui-focused' : ''}
-              sx={{ height: '100%' }}
-            >
-              <SyledCardContent
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  height: '100%',
-                }}
-              >
-                <div>
-                  <Typography gutterBottom variant="caption" component="div">
-                    {cardData[4].tag}
-                  </Typography>
-                  <Typography gutterBottom variant="h6" component="div">
-                    {cardData[4].title}
-                  </Typography>
-                  <StyledTypography
-                    variant="body2"
-                    color="text.secondary"
-                    gutterBottom
-                  >
-                    {cardData[4].description}
-                  </StyledTypography>
-                </div>
-              </SyledCardContent>
-              <Author authors={cardData[4].authors} />
-            </SyledCard>
-          </Box>
+            <CardMedia
+              component="img"
+              alt="green iguana"
+              image={cardData[4].img}
+              sx={{
+                height: { sm: 'auto', md: '50%' },
+                aspectRatio: { sm: '16 / 9', md: '' },
+              }}
+            />
+            <SyledCardContent>
+              <Typography gutterBottom variant="caption" component="div">
+                {cardData[4].tag}
+              </Typography>
+              <Typography gutterBottom variant="h6" component="div">
+                {cardData[4].title}
+              </Typography>
+              <StyledTypography variant="body2" color="text.secondary" gutterBottom>
+                {cardData[4].description}
+              </StyledTypography>
+            </SyledCardContent>
+            <Author authors={cardData[3].authors} />
+          </SyledCard>
         </Grid>
-        <Grid size={{ xs: 12, md: 4 }}>
+        <Grid size={{ xs: 12, md: 3 }}>
+          <SyledCard
+            variant="outlined"
+            onFocus={() => handleFocus(5)}
+            onBlur={handleBlur}
+            tabIndex={0}
+            className={focusedCardIndex === 5 ? 'Mui-focused' : ''}
+            sx={{ height: '100%' }}
+          >
+            <CardMedia
+              component="img"
+              alt="green iguana"
+              image={cardData[5].img}
+              sx={{
+                height: { sm: 'auto', md: '50%' },
+                aspectRatio: { sm: '16 / 9', md: '' },
+              }}
+            />
+            <SyledCardContent>
+              <Typography gutterBottom variant="caption" component="div">
+                {cardData[5].tag}
+              </Typography>
+              <Typography gutterBottom variant="h6" component="div">
+                {cardData[5].title}
+              </Typography>
+              <StyledTypography variant="body2" color="text.secondary" gutterBottom>
+                {cardData[5].description}
+              </StyledTypography>
+            </SyledCardContent>
+            <Author authors={cardData[5].authors} />
+          </SyledCard>
+        </Grid>
+      </Grid>
+      <Grid container spacing={2} columns={12}>
+        <Grid size={{ xs: 12, md: 3 }}>
+          <SyledCard
+            variant="outlined"
+            onFocus={() => handleFocus(2)}
+            onBlur={handleBlur}
+            tabIndex={0}
+            className={focusedCardIndex === 2 ? 'Mui-focused' : ''}
+            sx={{ height: '100%' }}
+          >
+            <CardMedia
+              component="img"
+              alt="green iguana"
+              image={cardData[1].img}
+              sx={{
+                height: { sm: 'auto', md: '50%' },
+                aspectRatio: { sm: '16 / 9', md: '' },
+              }}
+            />
+            <SyledCardContent>
+              <Typography gutterBottom variant="caption" component="div">
+                {cardData[1].tag}
+              </Typography>
+              <Typography gutterBottom variant="h6" component="div">
+                {cardData[1].title}
+              </Typography>
+              <StyledTypography variant="body2" color="text.secondary" gutterBottom>
+                {cardData[1].description}
+              </StyledTypography>
+            </SyledCardContent>
+            <Author authors={cardData[1].authors} />
+          </SyledCard>
+        </Grid>
+        <Grid size={{ xs: 12, md: 3 }}>
+          <SyledCard
+            variant="outlined"
+            onFocus={() => handleFocus(2)}
+            onBlur={handleBlur}
+            tabIndex={0}
+            className={focusedCardIndex === 2 ? 'Mui-focused' : ''}
+            sx={{ height: '100%' }}
+          >
+            <CardMedia
+              component="img"
+              alt="green iguana"
+              image={cardData[2].img}
+              sx={{
+                height: { sm: 'auto', md: '50%' },
+                aspectRatio: { sm: '16 / 9', md: '' },
+              }}
+            />
+            <SyledCardContent>
+              <Typography gutterBottom variant="caption" component="div">
+                {cardData[2].tag}
+              </Typography>
+              <Typography gutterBottom variant="h6" component="div">
+                {cardData[2].title}
+              </Typography>
+              <StyledTypography variant="body2" color="text.secondary" gutterBottom>
+                {cardData[2].description}
+              </StyledTypography>
+            </SyledCardContent>
+            <Author authors={cardData[2].authors} />
+          </SyledCard>
+        </Grid>
+        <Grid size={{ xs: 12, md: 3 }}>
+          <SyledCard
+            variant="outlined"
+            onFocus={() => handleFocus(5)}
+            onBlur={handleBlur}
+            tabIndex={0}
+            className={focusedCardIndex === 5 ? 'Mui-focused' : ''}
+            sx={{ height: '100%' }}
+          >
+            <CardMedia
+              component="img"
+              alt="green iguana"
+              image={cardData[4].img}
+              sx={{
+                height: { sm: 'auto', md: '50%' },
+                aspectRatio: { sm: '16 / 9', md: '' },
+              }}
+            />
+            <SyledCardContent>
+              <Typography gutterBottom variant="caption" component="div">
+                {cardData[4].tag}
+              </Typography>
+              <Typography gutterBottom variant="h6" component="div">
+                {cardData[4].title}
+              </Typography>
+              <StyledTypography variant="body2" color="text.secondary" gutterBottom>
+                {cardData[4].description}
+              </StyledTypography>
+            </SyledCardContent>
+            <Author authors={cardData[3].authors} />
+          </SyledCard>
+        </Grid>
+        <Grid size={{ xs: 12, md: 3 }}>
+          <SyledCard
+            variant="outlined"
+            onFocus={() => handleFocus(5)}
+            onBlur={handleBlur}
+            tabIndex={0}
+            className={focusedCardIndex === 5 ? 'Mui-focused' : ''}
+            sx={{ height: '100%' }}
+          >
+            <CardMedia
+              component="img"
+              alt="green iguana"
+              image={cardData[5].img}
+              sx={{
+                height: { sm: 'auto', md: '50%' },
+                aspectRatio: { sm: '16 / 9', md: '' },
+              }}
+            />
+            <SyledCardContent>
+              <Typography gutterBottom variant="caption" component="div">
+                {cardData[5].tag}
+              </Typography>
+              <Typography gutterBottom variant="h6" component="div">
+                {cardData[5].title}
+              </Typography>
+              <StyledTypography variant="body2" color="text.secondary" gutterBottom>
+                {cardData[5].description}
+              </StyledTypography>
+            </SyledCardContent>
+            <Author authors={cardData[5].authors} />
+          </SyledCard>
+        </Grid>
+      </Grid>
+      <Grid container spacing={2} columns={12}>
+        <Grid size={{ xs: 12, md: 3 }}>
+          <SyledCard
+            variant="outlined"
+            onFocus={() => handleFocus(2)}
+            onBlur={handleBlur}
+            tabIndex={0}
+            className={focusedCardIndex === 2 ? 'Mui-focused' : ''}
+            sx={{ height: '100%' }}
+          >
+            <CardMedia
+              component="img"
+              alt="green iguana"
+              image={cardData[1].img}
+              sx={{
+                height: { sm: 'auto', md: '50%' },
+                aspectRatio: { sm: '16 / 9', md: '' },
+              }}
+            />
+            <SyledCardContent>
+              <Typography gutterBottom variant="caption" component="div">
+                {cardData[1].tag}
+              </Typography>
+              <Typography gutterBottom variant="h6" component="div">
+                {cardData[1].title}
+              </Typography>
+              <StyledTypography variant="body2" color="text.secondary" gutterBottom>
+                {cardData[1].description}
+              </StyledTypography>
+            </SyledCardContent>
+            <Author authors={cardData[1].authors} />
+          </SyledCard>
+        </Grid>
+        <Grid size={{ xs: 12, md: 3 }}>
+          <SyledCard
+            variant="outlined"
+            onFocus={() => handleFocus(2)}
+            onBlur={handleBlur}
+            tabIndex={0}
+            className={focusedCardIndex === 2 ? 'Mui-focused' : ''}
+            sx={{ height: '100%' }}
+          >
+            <CardMedia
+              component="img"
+              alt="green iguana"
+              image={cardData[2].img}
+              sx={{
+                height: { sm: 'auto', md: '50%' },
+                aspectRatio: { sm: '16 / 9', md: '' },
+              }}
+            />
+            <SyledCardContent>
+              <Typography gutterBottom variant="caption" component="div">
+                {cardData[2].tag}
+              </Typography>
+              <Typography gutterBottom variant="h6" component="div">
+                {cardData[2].title}
+              </Typography>
+              <StyledTypography variant="body2" color="text.secondary" gutterBottom>
+                {cardData[2].description}
+              </StyledTypography>
+            </SyledCardContent>
+            <Author authors={cardData[2].authors} />
+          </SyledCard>
+        </Grid>
+        <Grid size={{ xs: 12, md: 3 }}>
+          <SyledCard
+            variant="outlined"
+            onFocus={() => handleFocus(5)}
+            onBlur={handleBlur}
+            tabIndex={0}
+            className={focusedCardIndex === 5 ? 'Mui-focused' : ''}
+            sx={{ height: '100%' }}
+          >
+            <CardMedia
+              component="img"
+              alt="green iguana"
+              image={cardData[4].img}
+              sx={{
+                height: { sm: 'auto', md: '50%' },
+                aspectRatio: { sm: '16 / 9', md: '' },
+              }}
+            />
+            <SyledCardContent>
+              <Typography gutterBottom variant="caption" component="div">
+                {cardData[4].tag}
+              </Typography>
+              <Typography gutterBottom variant="h6" component="div">
+                {cardData[4].title}
+              </Typography>
+              <StyledTypography variant="body2" color="text.secondary" gutterBottom>
+                {cardData[4].description}
+              </StyledTypography>
+            </SyledCardContent>
+            <Author authors={cardData[3].authors} />
+          </SyledCard>
+        </Grid>
+        <Grid size={{ xs: 12, md: 3 }}>
           <SyledCard
             variant="outlined"
             onFocus={() => handleFocus(5)}

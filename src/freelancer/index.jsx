@@ -3,10 +3,10 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Container from '@mui/material/Container';
 import AppTheme from '../shared-theme/AppTheme';
 import AppAppBar from '../commons/AppAppBar';
-import MainContent from './components/MainContent';
 import Footer from '../commons/Footer';
+import MainContent from './components/MainContent';
 
-const HomePage = (props) => {
+const Freelancer = (props) => {
   return (
     <AppTheme {...props}>
       <CssBaseline enableColorScheme />
@@ -23,4 +23,4 @@ const HomePage = (props) => {
   );
 }
 
-export default HomePage;
+export default Freelancer;

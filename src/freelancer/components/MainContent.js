@@ -15,7 +15,7 @@ export default function MainContent() {
           <Box
             sx={{
               width: '100%',
-              height: '40%',
+              height: 400,
               borderRadius: 1,
               bgcolor: 'primary.main',
               '&:hover': {
@@ -23,7 +23,7 @@ export default function MainContent() {
               },
             }}
           >
-            <img width="100%" height="100%" src={Logo} alt="logo" />
+            {/* <img width="100%" height="100%" src={Logo} alt="logo" /> */}
           </Box>
           <Stack spacing={1}>
             <Typography variant="h3" gutterBottom>
@@ -47,14 +47,16 @@ export default function MainContent() {
           <Box
             sx={{
               width: '100%',
-              height: '40%',
+              height: 400,
               borderRadius: 1,
               bgcolor: 'primary.main',
               '&:hover': {
                 bgcolor: 'primary.dark',
               },
             }}
-          />
+          >
+            {/* <img width="100%" height="100%" src={Logo} alt="logo" /> */}
+          </Box>
         </Grid>
       </Grid>
     </Box>
